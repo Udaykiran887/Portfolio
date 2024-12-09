@@ -1,0 +1,171 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: radial-gradient(circle at 10% 20%, rgb(87, 108, 117) 0%, rgb(37, 50, 55) 100.2%);
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #f96d00;
+    text-decoration: none;
+}
+
+p {
+    font-size: auto;
+    line-height: auto;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #f96d00;
+    text-decoration: none;
+}
+
+.section {
+    margin: 40px 0;
+}
+
+.skills {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.skill-item {
+    background-color: #a2c11c;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    color: white;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .skills {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+img.one {
+    height: 75%;
+    width: 40%;
+    border-radius: 40px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+img.two {
+    height: 80%;
+    width: 50%;
+    border-radius: 40px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar Styles */
+nav {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between logo and menu */
+    align-items: center; /* Center items vertically */
+    background-color: #22313f; /* Change to your preferred color */
+    padding: 10px 20px; /* Add some padding */
+    
+    position: relative; /* Position relative for absolute positioning of menu */
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    color: #f96d00;
+    margin: 0; /* Remove margin for better alignment */
+}
+
+nav a {
+    color: white; /* Change link color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px; /* Padding for click area */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Style for the menu container */
+nav > div:last-child {
+    display: flex; /* Use flexbox for the menu */
+    gap: 20px; /* Space between menu items */
+}
+
+nav a:hover,
+nav a.active {
+    background-color: #f96d00; /* Change background color on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+.logo {
+    margin-right: auto; /* Push logo to the right */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack nav items */
+    }
+
+    nav > div:last-child {
+        display: none; /* Hide menu by default */
+        flex-direction: column; /* Stack items vertically */
+        position: absolute; /* Optional: position absolute for better visibility */
+        top: 50px; /* Adjust as needed */
+        right: 0;
+        background-color: #22313f; /* Background color for dropdown */
+        width: 100%; /* Full width */
+    }
+
+    nav > div:last-child.active {
+        display: flex; /* Show menu when active */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger menu */
+        color: white;
+        font-size: 2rem;
+    }
+
+    nav a {
+        padding: 15px;
+        width: 100%; /* Make links full-width */
+        text-align: center; /* Center text */
+    }
+}

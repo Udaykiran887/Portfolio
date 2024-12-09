@@ -1,0 +1,168 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: radial-gradient(circle at 10% 20%, rgb(87, 108, 117) 0%, rgb(37, 50, 55) 100.2%);
+    color: #C9D1D9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 100px auto;
+    padding: 50px;
+    border-radius: 30px;
+    
+}
+
+h1 {
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 40px;
+    color: #f96d00;
+    font-size: 2.5rem;
+    
+}
+
+.project-list {
+    list-style: none;
+    padding: 0;
+}
+
+.project-list li {
+    margin: 20px 0;
+    padding: 30px;
+    background-color: #22313f;
+    border-radius: 8px;
+    transition: transform 0.5s smooth;
+    position: relative;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.project-list li:hover {
+    transform: scale(1.05);
+}
+
+.project-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #f96d00;
+}
+
+.project-link {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: #f96d00;
+}
+
+.project-description {
+    display: none;
+    position: relative;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    color: black;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+/* Show the project description on hover */
+.project-list li:hover .project-description {
+    display: block;
+    opacity: 1;
+}
+/* Navbar Styles */
+nav {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between logo and menu */
+    align-items: center; /* Center items vertically */
+    background-color: #22313f; /* Change to your preferred color */
+    padding: 10px 20px; /* Add some padding */
+    color: white;
+    position: relative; /* Position relative for absolute positioning of menu */
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    color: #f96d00;
+    margin: 0; /* Remove margin for better alignment */
+}
+
+nav a {
+    color: white; /* Change link color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px; /* Padding for click area */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Style for the menu container */
+nav > div:last-child {
+    display: flex; /* Use flexbox for the menu */
+    gap: 20px; /* Space between menu items */
+}
+
+nav a:hover,
+nav a.active {
+    background-color: #f96d00; /* Change background color on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+.logo {
+    margin-right: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack nav items */
+    }
+
+    nav > div:last-child {
+        display: none; /* Hide menu by default */
+        flex-direction: column; /* Stack items vertically */
+        position: absolute; /* Optional: position absolute for better visibility */
+        top: 50px; /* Adjust as needed */
+        right: 0;
+        background-color: #22313f; /* Background color for dropdown */
+        width: 100%; /* Full width */
+    }
+
+    nav > div:last-child.active {
+        display: flex; /* Show menu when active */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger menu */
+        color: white;
+        font-size: 2rem;
+    }
+
+    nav a {
+        padding: 15px;
+        width: 100%; /* Make links full-width */
+        text-align: center; /* Center text */
+    }
+}

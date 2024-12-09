@@ -1,0 +1,153 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: radial-gradient(circle at 10% 20%, rgb(87, 108, 117) 0%, rgb(37, 50, 55) 100.2%);
+    color: black;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px;
+    height: 100vh; /* Full height of the viewport */
+}
+
+/* Header Styles */
+header h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #fff;
+    text-align: left;
+}
+
+header p {
+    font-size: 24px;
+    margin-top: 10px;
+    color: #fff;
+    text-align: left;
+}
+
+.highlight {
+    color: #f96d00;
+    text-decoration: none;
+    transition: color 0.5s ease;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    margin-top: 30px;
+    text-align: left;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    transition: ease-in 0.3s;    
+}
+
+.nav-menu li a:hover {
+    color: #f96d00;
+    text-decoration-style: 2em;
+    text-underline-offset: 5px;
+}
+
+/* Image Container Styles */
+.image-container {
+    margin-top: 10%;
+    text-align: center;
+}
+
+.image-container img {
+    border-radius: 50%;
+    max-width: 300px;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Social Links Styles */
+.social-links {
+    color: #fff;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #f96d00;
+}
+
+/* Responsive Styles for Small Screens */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack elements vertically */
+        justify-content: center; /* Center vertically */
+        padding: 20px; /* Reduced padding */
+        height: auto; /* Allow height to adjust based on content */
+    }
+
+    header h1 {
+        font-size: 36px; /* Smaller font size for header */
+        text-align: center; /* Center align for mobile */
+    }
+
+    header p {
+        font-size: 20px; /* Smaller font size for paragraph */
+        text-align: center; /* Center align for mobile */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack menu items vertically */
+        margin: 20px 0; /* Add margin for spacing */
+        text-align: center; /* Center align menu on small screens */
+    }
+
+    nav ul li {
+        display: block; /* Make menu items block elements */
+        margin-bottom: 15px; /* Space between menu items */
+    }
+
+    .social-links {
+        text-align: center; /* Center align social links */
+        margin-top: 10px; /* Reduce margin on top */
+    }
+
+    .social-links a {
+        font-size: 1.2em; /* Smaller social link size */
+        margin: 0 5px; /* Reduce margin */
+    }
+
+    .image-container {
+        margin-top: 5%; /* Reduce margin for image container */
+    }
+
+    .image-container img {
+        max-width: 80%; /* Make image responsive */
+    }
+}

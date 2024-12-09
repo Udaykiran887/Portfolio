@@ -1,0 +1,87 @@
+/* Navbar Styles */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #22313f;
+  padding: 10px 20px;
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 99%;
+  z-index: 900;
+  right: -20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.logo h1 {
+  font-size: 1.8rem;
+  color: #f96d00;
+  margin: 0;
+}
+
+/* Style for the menu container */
+nav > div:last-child {
+  display: flex;
+  gap: 20px;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+.logo {
+  margin-right: auto;
+}
+
+body {
+  padding-top: 60px;
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+  nav {
+      flex-direction: row; /* Keeps logo and hamburger on the same line */
+      justify-content: space-between;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  nav > div:last-child {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      background-color: #22313f;
+      width: 100%;
+      
+  }
+
+  nav > div:last-child.active {
+      display: flex;
+  }
+
+  .hamburger {
+      display: flex;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  nav a {
+      padding: 15px;
+      width: 100%;
+      text-align: center;
+  }
+}

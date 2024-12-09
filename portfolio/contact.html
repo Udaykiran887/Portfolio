@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Uday Kiran Kothagattu</title>
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("csPkVLqJkenaX8tDx"); // Replace with your actual public key
+        })();
+    </script>
+</head>
+<body>
+    <!-- Navbar Include -->
+    <nav>
+        <div class="logo">
+          <h1>Uday Kiran Kothagattu</h1>
+        </div>
+        <div class="hamburger" id="hamburger" onclick="togglemenu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <div>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="education.html">Education</a>
+          <a href="projects.html">Projects</a>
+          <a href="skills.html">Skills</a>
+          <a href="https://docs.google.com/document/d/1vXhq47D64Rr6W3fVhoFE5xwmvSfVmQrx/edit?usp=drive_link&ouid=115570118427150800776&rtpof=true&sd=true" target="_blank">Resume</a>
+          <a href="contact.html" class="active">Contact</a>
+        </div>
+    </nav>
+    
+    <main>
+        <div class="container">
+            <h1>Contact Me</h1>
+
+            <form id="contactForm" onsubmit="return sendEmail(event)">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <span id="email-error" style="color: red;"></span> <!-- Error message for Gmail validation -->
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+
+                <p class="form-message" id="formMessage"></p>
+            </form>
+        </div>
+
+        <script type="text/javascript">
+            function sendEmail(event) {
+                event.preventDefault(); // Prevent form from submitting normally
+
+                // Validate Gmail
+                if (!validateGmail()) {
+                    return false; // Stop form submission if email is not valid
+                }
+
+                emailjs.sendForm('contact_service', 'contact_template', document.getElementById('contactForm'))
+                    .then(() => {
+                        document.getElementById('formMessage').innerText = 'Message sent successfully!';
+                    }, (error) => {
+                        document.getElementById('formMessage').innerText = 'Failed to send message. Please try again later.';
+                        console.error('Error:', error);
+                    });
+
+                return false; // Prevent default form action
+            }
+
+            // Gmail validation
+            function validateGmail() {
+                const emailInput = document.getElementById('email');
+                const errorMessage = document.getElementById('email-error');
+
+                const emailValue = emailInput.value;
+                if (!emailValue.endsWith('@gmail.com')) {
+                    errorMessage.innerText = "Please enter a valid Gmail address.";
+                    return false;
+                } else {
+                    errorMessage.innerText = ""; // Clear error message if valid
+                    return true;
+                }
+            }
+        </script>
+    </main>
+
+    <script src="navbar.js"></script>
+</body>
+</html>
